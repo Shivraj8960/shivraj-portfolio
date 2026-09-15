@@ -520,4 +520,11 @@ footer {
   object-fit: cover;
   border-radius: 50%;
   display: block;
+}.nav-profile {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
 }
