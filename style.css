@@ -527,4 +527,105 @@ footer {
   border-radius: 50%;
   margin-right: 10px;
   vertical-align: middle;
+}/* Futuristic 3D Sphere */
+.orbit-3d {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  animation: sphereSpin 12s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* glowing sphere rings */
+.orbit-3d::before,
+.orbit-3d::after {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  border: 1px solid #77e7c180;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #77e7c130;
+  transform-style: preserve-3d;
+}
+
+.orbit-3d::before {
+  transform: rotateX(70deg);
+}
+
+.orbit-3d::after {
+  transform: rotateY(70deg);
+}
+
+/* particle points */
+.orbit-3d span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px;
+  border-radius: 50%;
+  background: #77e7c1;
+  box-shadow:
+    0 0 10px #77e7c1,
+    0 0 25px #77e7c1;
+  transform-style: preserve-3d;
+}
+
+/* particle positions */
+.orbit-3d span:nth-child(1) {
+  transform: rotateY(0deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(2) {
+  transform: rotateY(45deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(3) {
+  transform: rotateY(90deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(4) {
+  transform: rotateY(135deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(5) {
+  transform: rotateY(180deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(6) {
+  transform: rotateY(225deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(7) {
+  transform: rotateY(270deg) translateZ(175px);
+}
+
+.orbit-3d span:nth-child(8) {
+  transform: rotateY(315deg) translateZ(175px);
+}
+
+@keyframes sphereSpin {
+  0% {
+    transform: translate(-50%, -50%)
+               rotateX(12deg)
+               rotateY(0deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%)
+               rotateX(25deg)
+               rotateY(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%)
+               rotateX(12deg)
+               rotateY(360deg);
+  }
 }
