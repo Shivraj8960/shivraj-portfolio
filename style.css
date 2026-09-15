@@ -166,15 +166,23 @@ nav a:hover,
 }
 
 .avatar {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font: 700 60px "Space Grotesk";
-  background: linear-gradient(145deg, #1c272b, #0d1217);
-  border: 1px solid #77e7c150;
-  box-shadow: 0 25px 80px #000;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: #0d1217;
+    border: 2px solid #77e7c1;
+    box-shadow: 0 0 40px #77e7c150;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 .floating,
@@ -506,4 +514,10 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+}.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
